@@ -5,6 +5,10 @@ import { CancelOutlined, InfoOutlined } from '@material-ui/icons'
 
 const CardContainer = styled.div`
     margin: 10px;
+    :hover {
+        cursor: pointer;
+    }
+
 `
 const CardTitle = styled.div`
     .CardTitle {

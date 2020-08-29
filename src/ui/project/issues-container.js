@@ -42,9 +42,11 @@ class IssuesContainer extends React.Component {
 
     handlePageChange = async(event, page) => {
         const { state } = this.state
-        const { fetchIssueList } = this.props
+        const { fetchIssueList, issueList } = this.props
         this.setState({ page, loading: true })
-        await fetchIssueList(10, page, state)
+        if (issueList && !issueList[page]){
+            await fetchIssueList(10, page, state)
+        }
         this.setState({loading: false})
     }
 

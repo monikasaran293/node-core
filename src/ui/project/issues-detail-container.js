@@ -97,9 +97,9 @@ class IssuesContainer extends React.Component {
     }
 
     render() {
-        const { issueDetails, history} = this.props
+        const { issueDetails, history, issueDetail} = this.props
         const { loading } = this.state
-        if(loading) {
+        if(loading || !Object.keys(issueDetail).length) {
             return <div>Loading...</div>
         }
         const { full_name } = issueDetails
