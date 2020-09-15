@@ -1,14 +1,14 @@
 import { createSelector } from 'reselect'
 
-const getState = state => state.issues
+const getState = state => state.starWars
 
-const getIssueDetails = createSelector(getState, state => state.issueDetails)
-const getIssueList = createSelector(getState, state => state.issueList)
-const getIssueDetail = createSelector(getState, state => state.issueDetail)
+const getStarWarsData = createSelector(getState, state => state.starWarsData)
+const getStarWarsDataByType = createSelector(getStarWarsData, data => (type, id) => {
+    if (type && id) return data[type][id]
+    return data[type]
+})
 
 
 export {
-    getIssueDetails,
-    getIssueList,
-    getIssueDetail
+    getStarWarsDataByType
 }

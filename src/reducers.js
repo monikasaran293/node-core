@@ -1,5 +1,5 @@
-import issues from './lib/reducers'
+import starWars from './lib/reducers'
 
 export default {
-    issues
+    starWars
 }

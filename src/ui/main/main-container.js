@@ -1,9 +1,9 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { ConnectClass } from '../../utils'
-import IssuesContainer from '../project/issues-container'
-import IssuesDetailContainer from '../project/issues-detail-container'
-
+import StarWarsDashboard from '../dashboard/star-wars-dashboard'
+import StarWarsDetailContainer from '../dashboard/star-wars-detail-container'
+import './main-container.css'
 
 class MainContainer extends React.Component {
     render() {
@@ -11,9 +11,9 @@ class MainContainer extends React.Component {
             <div className="MainContainer">
                <div className="ContentBox">
                     <Switch>
-                        <Redirect exact from='/' to='/issues' />
-                        <Route exact path='/issues' component={IssuesContainer} />
-                        <Route exact path='/issues/:issueId' component={IssuesDetailContainer} />
+                        <Redirect exact from='/' to='/star-wars' />
+                        <Route exact path='/star-wars' component={StarWarsDashboard} />
+                        <Route exact path='/star-wars/:type/:id' component={StarWarsDetailContainer} />
                         <Route render={() => <div><h1>404 Not Found</h1></div>} />
                     </Switch>
                 </div>

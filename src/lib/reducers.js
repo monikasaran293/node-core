@@ -1,39 +1,22 @@
 
 import { combineReducers } from 'redux'
-import { FETCH_ISSUE_LIST, FETCH_ISSUE_DETAILS, FETCH_ISSUE_DETAIL } from './actions'
+import { FETCH_STAR_WARS_DATA } from './actions'
 
 
-const issueDetails = (state = {}, {type, payload, error}) => {
-    if (type === FETCH_ISSUE_DETAILS.RESPONSE_RECEIVED) {
+const starWarsData = (state = {}, {type, payload, error}) => {
+    if (type === FETCH_STAR_WARS_DATA.RESPONSE_RECEIVED) {
         if (error) return state
-        return {...state, ...payload.response }
+        const { response=[], type } = payload
+        const formattedData = {}
+        response.map(item => formattedData[item.url] = item)
+        return {...state, [type]: formattedData }
     }
     return state
 }
 
-const issueList = (state = {}, {type, payload, error}) => {
-    if (type === FETCH_ISSUE_LIST.RESPONSE_RECEIVED) {
-        if (error) return state
-        let { response, page } = payload
-        let newState = { ...state, ...response, [page]: response.items }
-        delete newState.items
-        return newState
-    }
-    return state
-}
-
-const issueDetail = (state = {}, {type, payload, error}) => {
-    if (type === FETCH_ISSUE_DETAIL.RESPONSE_RECEIVED) {
-        if (error) return state
-        return {...state, ...payload.response }
-    }
-    return state
-}
 
 const reducer = combineReducers({
-    issueDetails,
-    issueList,
-    issueDetail
+    starWarsData
 })
 
 export default reducer
