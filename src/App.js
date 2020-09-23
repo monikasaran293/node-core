@@ -1,7 +1,6 @@
 import React from 'react'
 import { hot } from 'react-hot-loader'
 
-import { ConnectClass } from './utils'
 import MainContainer from './ui/main/main-container'
 
 import './App.css'
@@ -16,4 +15,4 @@ class App extends React.Component {
     }
 }
 
-export default hot(module)(ConnectClass(App))
+export default hot(module)(App)
