@@ -1,6 +1,6 @@
 export const StarWarsService = {
     fetchStarWarsData: (type, page=1, starwarsData = []) => {
-        const url = `https://swapi.dev/api/${type}/?page=${page}`
+        const url = `http://localhost:5002/all?type=${type}&page=${page}`
         return new Promise((resolve, reject) => fetch(url)
             .then(response => {
                 response.json().then(data => {
