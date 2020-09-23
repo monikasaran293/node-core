@@ -52,13 +52,13 @@ const DashboardCard = ({ type, data, onClick }) => {
     const footer = typeMap[type]['footer']
 
     return (
-        <CardContainer onClick={onClick}>
+        <CardContainer onClick={onClick} data-testid="DashboardCardId">
             <Card variant="outlined">
                 <CardContent  className="DashboardCard">
-                    <CardTitle>
+                    <CardTitle data-testid="DashboardCardHeaderId">
                         {data[header]}
                     </CardTitle>
-                    <CardFooter>
+                    <CardFooter data-testid="DashboardCardFooterId">
                         {data[footer]}
                     </CardFooter>
                 </CardContent>

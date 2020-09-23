@@ -115,7 +115,6 @@ class StarWarsDetailContainer extends React.Component {
                                 square
                                 key={`accordion-${idx}`}
                                 className="DetailAccordian"
-                                key={detailData[key]['url']}
                                 expanded={expanded === key} 
                                 onChange={() => this.handleAccordianChange(key)}>
                                 <AccordionSummary expandIcon={<ExpandMore />} id={key}>
