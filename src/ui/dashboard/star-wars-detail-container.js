@@ -85,8 +85,8 @@ class StarWarsDetailContainer extends React.Component {
                         return (
                             <div className="DetailPaper" key={`${url}-${idx}`}>
                                 <Grid container>
-                                    <Grid item xs={2}>{key}</Grid>
-                                    <Grid item xs={10}>{detailData[key]}</Grid>
+                                    <Grid item xs={4}>{key}</Grid>
+                                    <Grid item xs={8}>{detailData[key]}</Grid>
                                 </Grid>
                             </div>
                         )
